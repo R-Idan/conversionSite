@@ -1,0 +1,3 @@
+C:\Users\idan\source\repos\conversionSite\conversionSite\obj\Debug\conversionSite.njsprojAssemblyReference.cache
+C:\Users\idan\source\repos\conversionSite\conversionSite\obj\Debug\conversionSite.njsproj.CoreCompileInputs.cache
+C:\Users\idan\source\repos\conversionSite\conversionSite\bin\Microsoft.NodejsTools.WebRole.dll

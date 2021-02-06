@@ -1,0 +1,143 @@
+doctype html
+html(lang="en")
+    head 
+      title How many days from #{thisMonthFrom}, #{wdays} #{yearURL} to #{thisMonthTo}, #{wdays2} #{yearURL2}?
+      script(type='application/ld+json').
+       {
+       "@context": "https://schema.org",
+       "@type": "FAQPage",
+       "mainEntity": [{
+       "@type": "Question",
+       "name": "#{q1}",
+       "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "#{a1}"
+       }
+       },{
+       "@type": "Question",
+       "name": "#{q2}",
+       "acceptedAnswer": {
+       "@type": "Answer",
+       "text":"#{a2}"
+       }
+       },{
+       "@type": "Question",
+       "name": "#{q3}",
+       "acceptedAnswer": {
+       "@type": "Answer",
+       "text":"#{a2}"
+       }
+       }]
+       }
+      script.
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MVBK9BV');
+      meta(charset='utf-8')
+      style
+          include style.css
+      meta( name="description" content=""+ desc +"")
+      meta( name="keywords" content="How long until?, How many days?, What date will be in this many days?, How long between 2 dates?,How many days between 2 dates?")
+      meta( name="author" content="Idan Rutman")
+      meta( name="viewport" content="width=device-width, initial-scale=1")
+
+      meta( name="twitter:card" content="summary" )
+      meta( name="twitter:site" content="@OptiPog" )
+      meta( name="twitter:title" content="How many days from "+thisMonthFrom+", "+wdays+ " " + yearURL+ " to " +thisMonthTo+ ", " +wdays2+ " " + yearURL2+"?")
+      meta( name="twitter:description" content=""+ desc +"" )
+      meta( name="twitter:image" content="https://convert.company/logo.png")
+
+      meta(property="og:title" content="How many days from "+thisMonthFrom+", "+wdays+ " " + yearURL+ " to " +thisMonthTo+ ", " +wdays2+ " " + yearURL2+"?")
+      meta(property="og:url" content="https://convert.company/from/"+dayURL+"/"+monthURL+"/"+yearURL+"/to/"+dayURL2+"/"+monthURL2+"/"+yearURL2+"")
+      meta( property="og:image" content="https://convert.company/logo.png")
+      meta(property="og:type" content="website")
+      meta(property="og:description" content=""+ desc +"")
+      meta(property="og:locale" content="en")
+      script.
+        function urlencode(value){return value.replace(/ /g,"/")}
+      link( href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet")
+    body
+        noscript.
+            iframe 
+                src="https://www.googletagmanager.com/ns.html?id=GTM-MVBK9BV"
+                height="0" width="0" style="display:none;visibility:hidden"
+        div(class="wrapper" style="width: 100%;background-color:#5b5b5b;")
+            div(style="padding-top:25px")
+                a(href="https://convert.company" style="text-decoration:none" )
+                    img( src="/logo.png" alt="Logo" style="   display: block; margin-left: auto; margin-right: auto; width: 150px; height:150px" width="150px" height="150px")
+                h1 #[b #[a(href="/from/"+dayURL+"/"+monthURL+"/"+yearURL+"/to/"+dayURL2+"/"+monthURL2+"/"+yearURL2+"" style="text-decoration:none") #{thisMonthFrom}, #{DFromsay} #{yearURL}]] is:
+                if ytop!=""
+                    h1 #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{ytop} ]]
+                if mtop !=""
+                    h1 #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{mtop}]]
+                if dtop!=""
+                    h1 #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{dtop}]]
+                h1 ahead of #[b #[a(href="/from/"+dayURL+"/"+monthURL+"/"+yearURL+"/to/"+dayURL2+"/"+monthURL2+"/"+yearURL2+"" style="text-decoration:none") #{thisMonthTo}, #{DTosay} #{yearURL2}]]
+            div(class="planner")
+                div(class="calendar")
+                    div(class="calendar-header")
+                        span(style="text-align:center" ) #[a(href=""+monthB4froml+"" title="Last month: "+beforeMonthFrom+" "+monthB4From +"" style="text-decoration:none" ) < ]  #{thisMonthFrom} #{yearURL}  #[a(href=""+monthL8rfroml+"" title="Next month: "+nextMonthFrom+" "+monthL8rFrom +"" style="text-decoration:none"  )  >]
+                    table
+                        thread
+                            tr
+                                th Sun
+                                th Mon
+                                th Tue
+                                th Wed
+                                th Thu
+                                th Fri
+                                th Sat
+                            tbody
+                                tr
+                                    each val,i in weekdays
+                                        if i%7==0
+                                            tr
+                                        if val==today && monthB== monthdays[i]
+                                            td #[a(href=""+linkt[i]+ "" style="font-weight: bold" title=""+say[i]+"") #{val}]
+                                        else
+                                            td #[a(href=""+linkt[i]+ "" style="text-decoration:none" title=""+say[i]+"") #{val}]
+                    div(class="calendar-header" style = "flex: 1")
+                        span(style="text-align:center") #[a(href=""+monthB4tol+"" title="Last month: "+beforeMonthTo+" "+monthB4To +"" style="text-decoration:none" ) < ]  #{thisMonthTo} #{yearURL2}  #[a(href=""+monthL8rtol+"" title="Next month: "+nextMonthTo+" "+monthL8rTo +"" style="text-decoration:none"  )  >]
+                    table
+                        thread
+                            tr
+                                th Sun
+                                th Mon
+                                th Tue
+                                th Wed
+                                th Thu
+                                th Fri
+                                th Sat
+                            tbody
+                                tr
+                                    each val,i in weekdays2
+                                        if i%7==0
+                                            tr
+                                        if val==today2 && monthB2 == monthdays2[i]
+                                            td #[a(href=""+linkt2[i]+ "" style="font-weight: bold" title =""+say2[i]+"") #{val}]
+                                        else
+                                            td #[a(href=""+linkt2[i]+ "" style="text-decoration:none" title =""+say2[i]+"") #{val}]
+        h2 The amount of time between #[b #[a(href="/from/"+dayURL+"/"+monthURL+"/"+yearURL+"/to/"+dayURL2+"/"+monthURL2+"/"+yearURL2+"" style="text-decoration:none") #{dayOfWeekTo}, #{thisMonthFrom}, #{wdays} #{yearURL}]] and #[b #[a(href="/from/"+dayURL+"/"+monthURL+"/"+yearURL+"/to/"+dayURL2+"/"+monthURL2+"/"+yearURL2+"" style="text-decoration:none") #{thisMonthTo}, #{wdays2} #{yearURL2}]] is: #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{Ytxt} #{Mtxt} #{Dtxt}]].
+        h2 which is #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{weektxt}]]
+        h2 and that is also #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{daytxt} ]]
+        h2 which turns out to be #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{hourtxt}]]
+        h2 and calculating that to be #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{mintxt} ]]
+        h2 and that is exactly #[b #[a(href="/now/add/"+daysbtw+"" style="text-decoration:none") #{sectxt} ]]
+        br
+        form(onsubmit="if (this.form.d1.value.length > 0&&this.form.d2.value.length > 0) {location='/from/'+ urlencode(this.form.d1.value)+'/to/'+urlencode(this.form.d2.value);} else {alert('Please enter valid dates');}return false;")
+            label how long from: #[input(type="text" name="d1" class="borderless" )] 
+            label to: #[input(type="text" name="d2" class="borderless" )] 
+            input(type="submit" value="?" onclick="if (this.form.d1.value.length > 0&&this.form.d2.value.length > 0) {location='/from/'+ urlencode(this.form.d1.value)+'/to/'+urlencode(this.form.d2.value);} else {alert('Please enter valid dates');}return false;")
+        h2(style="font-size: 16px") we only accept when the second is bigger then the first
+        br
+        each val,i in randomArr
+            h2(style="font-size: 16px") #[a(href="/from/"+randomArr[i]+"/to/"+randomArr2[i]+"" style="text-decoration: underline") how many days between #{randomMonthSay[i]}, #{randomArr[i]} and #{randomMonthSay2[i]}, #{randomArr2[i]}]
+        br
+        h2 this site is made by a high schooler which is trying out enterpenuership 
+        h2 this site calculates your date based on a few java script libraries 
+        h2 and is based on the gregorian calander which was created in 1582 
+        h2 and somewhere around this time we skipped a few years and this site accounts for that(hopefully) :) 
+        h2 contact me @ support@convert.company
+        footer #[a(href="https://convert.company" style="text-decoration:none" ) © 2020 Convert.Company]

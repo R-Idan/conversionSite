@@ -1,0 +1,234 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+div, ul, li{
+	list-style-type: none;
+}
+h2, h3, h5, h6, h7
+{
+font-weight: normal;
+}
+h1 {
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+	color:white;
+}
+h2, label {
+	font-family: 'Nunito', sans-serif;
+	margin-left: 25px;
+	font-size: 22px;
+	text-align: left;
+}
+
+.planner {
+	font-family: 'Nunito', sans-serif;
+	width: 40%;
+	margin: 0 auto;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.calendar {
+	font-family: 'Nunito', sans-serif;
+	padding: 10px;
+	background-color: #5b5b5b;
+}
+input {
+	border-color: black;
+	background-color: white;
+	border-width: 1px;
+	font-family: 'Nunito', sans-serif;
+
+}
+.borderless {
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+}
+input:focus {
+	outline: none;
+}
+@media only screen and (orientation: Portrait) {
+	form {
+		font-size: 28px;
+	}
+
+	input {
+		font-size: 28px;
+	}
+}
+footer {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-family: 'Nunito', sans-serif;
+}
+h4 {
+	width:150px;
+	font-size: 28px;
+	font-weight: 200;
+	line-height: 36px;
+	font-family: 'Nunito', sans-serif;
+	color: white;
+	margin: 0 auto;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+b {
+	font-family: 'Nunito', sans-serif;
+}
+h6 {
+	text-align: center;
+	font-size: 28px;
+	font-weight: 200;
+	line-height: 36px;
+	font-family: 'Nunito', sans-serif;
+	color: white;
+	margin-bottom: 0;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 0;
+}
+
+
+h5 {
+	text-align: left;
+	font-size: 34px;
+	font-weight: 200;
+	line-height: 34px;
+	font-family: 'Nunito', sans-serif;
+	color: white;
+	margin-bottom: 0;
+	padding-right: 0px;
+	padding-left: 17px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.calendar-header{
+	color: white;
+	border-bottom: 1px solid #a7a7a7;
+	margin: 0; padding: 0;
+	text-align: center;
+	line-height: 0px;
+	font-size: 0px;
+	padding-bottom: 10px;
+  }
+	
+	.calendar-header span{
+		display: inline-block;
+		font-size: 38px;
+		font-weight: 200;
+		text-align: center;
+		line-height: 36px;
+	}
+	
+	.calendar-header:after{
+		content: '';
+		display: inline-block;
+		width: 100%;
+	}   
+
+
+table{
+	width: 100%;
+	padding: 10px;
+	color: white;
+}
+
+th{
+	font-weight: normal;
+	font-size: 20px;
+	color: white;
+}
+
+td{
+	font-weight: normal;
+	font-size: 20px;
+	text-align: center;
+}
+
+
+td > span{
+	display: inline-block;
+	text-align: center;
+	padding: 3px; margin: 0px;
+	width: 20px; height: 20px;
+  line-height: 20px;
+}
+	
+
+td > span.active{
+		border: 1px solid #98cd60;
+		border-radius: 30px;
+	}
+td > span:active{
+		border: 2px solid #98cd60;
+		border-radius: 30px;
+	}
+
+
+
+.schedule{
+	margin: 0;
+}
+
+.tabs{
+	margin: 0; padding: 0;
+	text-align: justify;
+	line-height: 0px;
+	font-size: 0px;
+  background-color: #6b6b6b;
+}	
+.tabs	.tab{
+		display: inline-block;
+		width: 33.3333%;
+		background-color: #6b6b6b;
+		text-align: center;
+		color: #5b5b5b;
+		margin: 0; padding: 0;
+		border: 0px none;
+		line-height: 38px;
+		font-size: 14px;
+		transition: background 0.2s;
+}
+	 
+.tab:active{
+			background-color: #999999;
+			color: #ffffff;
+			font-weight: 600;
+}
+			
+.tab:avtive:hover{
+			background-color: #999999;
+}
+
+		
+.tabs	.tab:hover{
+			background-color: #777777;
+		}
+		
+		a{
+			color: inherit;
+			text-decoration: none;
+		}
+  
+	.tabs:after{
+		content: '';
+		width: 100%;
+		display: inline-block;
+	}  
+
+
+.schedule-list{
+	padding: 20px;
+	margin-left: 37px;
+	border-left: 2px solid #cccccc;
+	display: block;
+}
+	

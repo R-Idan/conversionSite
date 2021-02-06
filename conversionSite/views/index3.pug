@@ -1,0 +1,83 @@
+doctype html
+html(lang="en")
+    head
+      title What date is in #{days} #{daySay}?
+      script(type='application/ld+json').
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": {
+            "@type": "Question",
+            "name": "#{q1}",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "#{a1}"
+            }
+          }
+        }
+      script.
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MVBK9BV');
+      meta(charset='utf-8')
+      style
+          include style.css
+      meta( name="description" content=""+ desc +"")
+      meta( name="keywords" content="How long until?, How many days?, What date will be in this many days?, How long between 2 dates?,How many days between 2 dates?")
+      meta( name="author" content="Idan Rutman")
+      meta( name="viewport" content="width=device-width, initial-scale=1")
+
+      meta( name="twitter:card" content="summary" )
+      meta( name="twitter:site" content="@OptiPog" )
+      meta( name="twitter:title" content="What date is in "+days+ " "+daySay+"?")
+      meta( name="twitter:description" content=""+ desc +"" )
+      meta( name="twitter:image" content="https://convert.company/logo.png")
+
+      meta(property="og:title" content="What date is in "+days+ " "+daySay+"?")
+      meta(property="og:url" content="https://convert.company/now/add/"+days+"")
+      meta( property="og:image" content="https://convert.company/logo.png")
+      meta(property="og:type" content="website")
+      meta(property="og:description" content=""+ desc +"")
+      meta(property="og:locale" content="en")
+      script.
+        function urlencode(value){return value.replace(/ /g,"/")}
+      link( href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet")
+    body
+        noscript.
+            iframe 
+                src="https://www.googletagmanager.com/ns.html?id=GTM-MVBK9BV"
+                height="0" width="0" style="display:none;visibility:hidden"
+        a(href="https://convert.company" style="text-decoration:none" )
+            img( src="/logo.png" alt="Logo" style="   display: block; margin-left: auto; margin-right: auto; width: 150px; height:150px" width="150px" height="150px")
+        br
+        h1(style="text-align:center; font-size: 24px; color:black") It's #{days} #{daySay} until #[b #{txtM}, #{txtD} #{dateFromNow}].
+        br
+        h2 today is: #[b #{nowSay}] and
+        h2 you searched for #[b #{days}#{daytxt}] from today
+        h2 which is #[b #{weeks}#{weektxt}]
+        h2 and that turns out to be #[b #{hours}#{hourtxt}]
+        h2 and claculating that to be #[b #{min}#{mintxt}]
+        h2 and that is exactly #[b #{sec}#{sectxt}]
+        br
+        form(onsubmit="if (this.form.d1.value >= 0 && this.form.d1.value.length >0) {location='/now/add/'+ urlencode(this.form.d1.value);} else {alert('Please enter a number.');}return false;")
+            label what date is: #[input(type="text" name="d1" class="borderless")] days from now 
+            input(type="submit" value="?" onclick="if (this.form.d1.value.length >0) {location='/now/add/'+ urlencode(this.form.d1.value);} else {alert('Please enter a number.');}return false;")
+            h2(style="font-size: 16px") we only accept numbers that are bigger then zero.
+        br
+        h2(style="font-size: 16px") #[a(href="/now/add/15" style="text-decoration: underline") What date is in 15 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/30" style="text-decoration: underline") What date is in 30 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/45" style="text-decoration: underline") What date is in 45 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/60" style="text-decoration: underline") What date is in 60 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/90" style="text-decoration: underline") What date is in 90 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/365" style="text-decoration: underline") What date is in 365 days]
+        each val,i in randomDay
+            h2(style="font-size: 16px") #[a(href="/now/add/"+randomDay[i]+"" style="text-decoration: underline") What date is in #{randomDay[i]}#{daytxt}]
+        br
+        h2 this site is made by a high schooler which is trying out enterpenuership 
+        h2 this site calculates your date based on a few java script libraries 
+        h2 and is based on the gregorian calander which was created in 1582 
+        h2 and somewhere around this time we skipped a few years and this site accounts for that(hopefully) :) 
+        h2 contact me @ support@convert.company
+        footer #[a(href="https://convert.company" style="text-decoration:none" ) © 2020 Convert.Company]

@@ -1,0 +1,80 @@
+doctype html
+html(lang="en")
+    head
+      title Dates Calculator | convert.company
+      script.
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MVBK9BV');
+      meta(charset='utf-8')
+      style
+          include style.css
+      meta( name="description" content="This site will show how long until a date, how long between 2 dates, what date is this many days away")
+      meta( name="keywords" content="How long until?, How many days?, What date will be in this many days?, How long between 2 dates?,How many days between 2 dates?")
+      meta( name="author" content="Idan Rutman")
+      meta( name="viewport" content="width=device-width, initial-scale=1")
+
+      meta( name="twitter:card" content="summary" )
+      meta( name="twitter:site" content="@OptiPog" )
+      meta( name="twitter:title" content="Dates Calculator" )
+      meta( name="twitter:description" content="This site will show how long until a date, how long between 2 dates, what date is this many days away" )
+      meta( name="twitter:image" content="https://convert.company/logo.png")
+
+      meta(property="og:title" content="Dates Calculator")
+      meta(property="og:url" content="https://convert.company")
+      meta( property="og:image" content="https://convert.company/logo.png")
+      meta(property="og:type" content="website")
+      meta(property="og:description" content="This site will show how long until a date, how long between 2 dates, what date is this many days away")
+      meta(property="og:locale" content="en")
+      script.
+        function urlencode(value){return value.replace(/ /g,"/")}
+      link( href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet")
+    body
+        noscript.
+            iframe 
+                src="https://www.googletagmanager.com/ns.html?id=GTM-MVBK9BV"
+                height="0" width="0" style="display:none;visibility:hidden"
+        div(style="text-align:center")
+            a(href="https://convert.company" style="text-decoration:none" )
+                img( src="/logo.png" alt="Logo" style="display: block; margin-left: auto; margin-right: auto; width: 150px; height:150px" width="150px" height="150px")
+            br
+            h1(style="font-size:24px; text-align:center; color:black") From Today to another day:
+            form(style="padding-bottom:15px" onsubmit="if (this.form.d1.value.length > 0) {location='/from/now/'+ urlencode(this.form.d1.value);} else {alert('Please enter a date.');}return false;")
+                label how long until #[input(type="text" name="d1" class="borderless")] 
+                input(type="submit" value="?" onclick="if (this.form.d1.value.length > 0) {location='/from/now/'+ urlencode(this.form.d1.value);} else {alert('Please enter a valid date.');}return false;")
+            h2(style="font-size:16px; text-align:center; color:black")  we only accept dates that are from tomorrow and up
+            br
+            h1(style="font-size:24px; text-align:center; color:black") From someday to someday else:
+            form(style="padding-bottom:15px" onsubmit="if (this.form.d1.value.length > 0&&this.form.d2.value.length >= 0) {location='/from/'+ urlencode(this.form.d1.value)+'/to/'+urlencode(this.form.d2.value);} else {alert('Please enter valid dates');}return false;")
+                label how long from: #[input(type="text" name="d1" class="borderless")]
+                label to: #[input(type="text" name="d2" class="borderless")] 
+                input(type="submit" value="?" onclick="if (this.form.d1.value.length > 0&&this.form.d2.value.length >= 0) {location='/from/'+ urlencode(this.form.d1.value)+'/to/'+urlencode(this.form.d2.value);} else {alert('Please enter valid dates');}return false;")
+            h2(style="font-size:16px; text-align:center; color:black") we only accept when the second is bigger then the first
+            br
+            h1(style="font-size:24px; text-align:center; color:black") Days from today:
+            form(style="padding-bottom:15px" onsubmit="if (this.form.d1.value.length > 0) {location='/now/add/'+ urlencode(this.form.d1.value);} else {alert('Please enter a number.');}return false;")
+                label what date is: #[input(type="text" name="d1" class="borderless")] days from now 
+                input(type="submit" value="?" onclick="if (this.form.d1.value.length > 0) {location='/now/add/'+ urlencode(this.form.d1.value);} else {alert('Please enter a number.');}return false;")
+            h2(style="font-size:16px; text-align:center; color:black") days must be bigger then 0
+        br
+        h2(style="font-size: 16px") #[a(href="/now/add/15" style="text-decoration: underline") What date is in 15 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/30" style="text-decoration: underline") What date is in 30 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/45" style="text-decoration: underline") What date is in 45 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/60" style="text-decoration: underline") What date is in 60 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/90" style="text-decoration: underline") What date is in 90 days]
+        h2(style="font-size: 16px") #[a(href="/now/add/365" style="text-decoration: underline") What date is in 365 days]
+        each val,i in randomDay
+            h2(style="font-size: 16px") #[a(href="/now/add/"+randomDay[i]+"" style="text-decoration: underline") What date is in #{randomDay[i]}#{daytxt}]
+        each val,i in randomArr
+            h2(style="font-size: 16px") #[a(href="/from/now/"+randomArr[i]+"" style="text-decoration: underline") how long between now and #{randomMonthSay[i]}, #{randomArr[i]}]
+        each val,i in randomArr1
+            h2(style="font-size: 16px") #[a(href="/from/"+randomArr1[i]+"/to/"+randomArr2[i]+"" style="text-decoration: underline") how many days between #{randomMonthSay1[i]}, #{randomArr1[i]} and #{randomMonthSay2[i]}, #{randomArr2[i]}]
+        br
+        h2 this site is made by a high schooler which is trying out enterpenuership 
+        h2 this site calculates your date based on a few java script libraries 
+        h2 and is based on the gregorian calander which was created in 1582 
+        h2 and somewhere around this time we skipped a few years and this site accounts for that(hopefully) :) 
+        h2 contact me @ support@convert.company
+        footer #[a(href="https://convert.company" style="text-decoration:none" ) © 2020 Convert.Company]
